@@ -24,6 +24,11 @@ btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
 
 // listening for the esc key - keyboard event
-document.addEventListener('keydown', function() {
-
+// The (e) is the event that occurs
+// ex. If the "enter" key was pressed, the event would log - key: "Enter"
+document.addEventListener('keydown', function(e) {
+    console.log(e);
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+    }
 })
